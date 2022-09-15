@@ -56,7 +56,7 @@ console.log('----------------------');
 const arr3 = [2, 5, 8, 15, 0, 6, 20, 3];
 
 for (let i = 0; i < arr3.length; i++) {
-  if (arr3[i] % 2 == 0) {
+  if (arr3[i] % 2 === 0) {
     console.log(arr3[i]);
   }
 }
