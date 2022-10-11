@@ -41,9 +41,7 @@ const data = [
   },
 ];
 
-
 // 1 ЗАДАЧА
-
 
 function qwery(string) {
   if (string === string.split('').reverse().join('')) {
@@ -62,7 +60,6 @@ console.log(qwery('roo'));
 // console.log(qwery(['qwq']));
 
 // 2 ЗАДАЧА
-
 
 function qwerty(word1) {
   return data.reduce((acc, item) => {
