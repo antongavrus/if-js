@@ -1,5 +1,33 @@
 // 7. Classes (lesson 21)
 
+studentsData = [
+  {
+    firstName: 'Василий',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Java',
+  },
+  {
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    admissionYear: 2018,
+    courseName: 'JavaScript',
+  },
+  {
+    firstName: 'Александр',
+    lastName: 'Федоров',
+    admissionYear: 2017,
+    courseName: 'Python',
+  },
+  {
+    firstName: 'Николай',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Android',
+  },
+]
+
+
 class User {
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -18,47 +46,32 @@ class Student extends User {
   }
 
   get course() {
-    const courseRes = 2022 - this.admissionYear;
-    courseRes.sort();
+    const today = new Date()
+    const year = today.getFullYear()
+    return year.sort((a, b) => {
+      return a - b;
+    });
   }
 }
 
+
+
+
+
 class Students {
-  constructor(
-    studentsData = [
-      {
-        firstName: 'Василий',
-        lastName: 'Петров',
-        admissionYear: 2019,
-        courseName: 'Java',
-      },
-      {
-        firstName: 'Иван',
-        lastName: 'Иванов',
-        admissionYear: 2018,
-        courseName: 'JavaScript',
-      },
-      {
-        firstName: 'Александр',
-        lastName: 'Федоров',
-        admissionYear: 2017,
-        courseName: 'Python',
-      },
-      {
-        firstName: 'Николай',
-        lastName: 'Петров',
-        admissionYear: 2019,
-        courseName: 'Android',
-      },
-    ],
-  ) {
+  constructor(studentsData) {
     this.studentsData = studentsData;
   }
 
   get getInfo() {
-    return `${this.course}`;
+    const varName = new User()
+    return varName.course.map(i => new User (i.firstName, i.lastName).fullName)
+
   }
 }
+console.log(varName.course)
+
+
 
 const students = new Students(studentsData);
-console.log(students.getInfo());
+// console.log(students.getInfo());
