@@ -25,8 +25,7 @@ studentsData = [
     admissionYear: 2019,
     courseName: 'Android',
   },
-]
-
+];
 
 class User {
   constructor(firstName, lastName) {
@@ -39,6 +38,7 @@ class User {
 }
 
 class Student extends User {
+  course;
   constructor(firstName, lastName, admissionYear, courseName) {
     super(firstName, lastName);
     this.admissionYear = admissionYear;
@@ -46,17 +46,15 @@ class Student extends User {
   }
 
   get course() {
-    const today = new Date()
-    const year = today.getFullYear()
-    return year.sort((a, b) => {
-      return a - b;
-    });
+    const today = studentsData;
+    const date = new Date()
+    const year = date.getFullYear()
+    return today.sort( (a,b) =>
+    {
+      return a.admissionYear > b.admissionYear ? -1 : (a.admissionYear === b.admissionYear ? 0 : 1)
+    }).map( i=> { return {...i, course: year - i.admissionYear}})
   }
 }
-
-
-
-
 
 class Students {
   constructor(studentsData) {
@@ -64,14 +62,13 @@ class Students {
   }
 
   get getInfo() {
-    const varName = new User()
-    return varName.course.map(i => new User (i.firstName, i.lastName).fullName)
-
+    const varName = new Student();
+    return varName.course.map(
+      (i) => new User(i.firstName, i.lastName).fullName,
+    );
   }
 }
-console.log(varName.course)
-
 
 
 const students = new Students(studentsData);
-// console.log(students.getInfo());
+console.log(students.getInfo());
