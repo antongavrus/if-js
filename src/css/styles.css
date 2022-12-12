@@ -9,7 +9,7 @@
 
 .top-section__size {
   width: 100%;
-  background-image: url("../images/background.svg");
+  background-image: url('../images/background.svg');
   background-size: cover;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .header__text {
-  font-family: "Roboto regular", sans-serif;
+  font-family: 'Roboto regular', sans-serif;
   font-size: 24px;
   color: #ffffff;
 }
@@ -74,7 +74,7 @@
   position: absolute;
   top: 58px;
   left: 5px;
-  content: "";
+  content: '';
   width: 50px;
   height: 4px;
   background: #f5bd41;
@@ -84,7 +84,7 @@
   position: absolute;
   top: 58px;
   left: 55px;
-  content: "";
+  content: '';
   width: 50px;
   height: 4px;
   background: #f5bd41;
@@ -111,7 +111,7 @@
 .top-section__title {
   font-size: 50px;
   color: #ffffff;
-  font-family: "Roboto medium", sans-serif;
+  font-family: 'Roboto medium', sans-serif;
   white-space: nowrap;
   width: 100vw;
   margin: auto;
@@ -132,7 +132,7 @@
 .top-section__form {
   width: 100%;
   font-size: 18px;
-  font-family: "Roboto regular", sans-serif;
+  font-family: 'Roboto regular', sans-serif;
   height: 65px;
   color: #000000;
 }
@@ -228,13 +228,12 @@
   border-radius: 8px;
   border: hidden;
   font-size: 24px;
-  font-family: "Roboto regular", sans-serif;
+  font-family: 'Roboto regular', sans-serif;
   margin-left: 5px;
 }
 
 .container-33 {
-  /*display: none;*/
-  flex-direction: row;
+
   flex-wrap: nowrap;
   width: 26%;
   display: flex;
@@ -264,7 +263,7 @@
   margin: 0 0 24px 24px;
   color: #ffffff;
   font-size: 18px;
-  font-family: "Roboto regular", sans-serif;
+  font-family: 'Roboto regular', sans-serif;
 }
 
 .top-section__download-icons {
@@ -300,7 +299,7 @@
 
 .advantages__title {
   text-align: center;
-  font-family: "Roboto medium", sans-serif;
+  font-family: 'Roboto medium', sans-serif;
   font-size: 40px;
   position: relative;
 }
@@ -309,7 +308,7 @@
   position: absolute;
   top: 67px;
   left: 670px;
-  content: "";
+  content: '';
   width: 100px;
   height: 4px;
   background: #f5bd41;
@@ -327,7 +326,7 @@
   white-space: nowrap;
   /*width: 25%;*/
   text-align: center;
-  font-family: "Roboto regular", sans-serif;
+  font-family: 'Roboto regular', sans-serif;
   font-size: 24px;
 }
 
@@ -390,7 +389,7 @@
 }
 
 .filter {
-  /*display: none;*/
+  display: none;
   padding: 16px 22px 16px 22px;
   width: 215px;
   background-color: white;
@@ -431,8 +430,31 @@
 .filter__buttons {
   width: 30px;
   height: 30px;
+  background: #ffffff;
+  border: 1px solid #3077c6;
+  color: #3077c6;
+  align-self: center;
+}
+
+.filter__age {
+  display: none;
+  text-align: left;
+}
+
+.filter__age-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #333333;
+  margin: 22px 0 12px 0;
+}
+
+.filter__select {
+  width: 99px;
+  height: 30px;
   background: #FFFFFF;
   border: 1px solid #3077C6;
-  color: #3077C6;
-  align-self: center;
+
 }

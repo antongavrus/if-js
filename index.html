@@ -6,139 +6,193 @@
     <link rel="stylesheet" href="src/css/styles.css" />
   </head>
   <body class="body">
-  <div class="top-section__size">
-    <div class="top-section">
-      <div class="top-section__header">
-        <div class="logo-position">
-          <svg class="header__icons logo">
-            <use href="./src/images/sprite.svg#logo" />
-          </svg>
-        </div>
-        <div class="top-section__header-right">
-          <div class="header__stays">
-            <p class="header__text stays">Stays</p>
-          </div>
-          <div class=header__attractions>
-            <p class="header__text attractions">Attractions</p>
-          </div>
-          <div class="night-position">
-            <svg class="header__icons night">
-              <use href="./src/images/sprite.svg#night" />
+    <div class="top-section__size">
+      <div class="top-section">
+        <div class="top-section__header">
+          <div class="logo-position">
+            <svg class="header__icons logo">
+              <use href="./src/images/sprite.svg#logo" />
             </svg>
           </div>
-          <div class="account-position">
-            <svg class="header__icons account">
-              <use href="./src/images/sprite.svg#account" />
-            </svg>
-          </div>
-          <div class="burger-position">
-            <svg class="header__icons burger">
-              <use href="./src/images/sprite.svg#burger" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="top-section__page">
-        <h1 class="top-section__title col-mob-6">Discover stays<br>to live, work or just relax</h1>
-        <div class="top-section__search">
-          <div class="top-section__form-city col-mob-6">
-            <div>
-              <label class="form-city__title" for="name">Yur destination or hotel name</label>
-              <input class="top-section__form top-section__form-city--border" id="name" required type="text" name="name" placeholder="New-York">
+          <div class="top-section__header-right">
+            <div class="header__stays">
+              <p class="header__text stays">Stays</p>
+            </div>
+            <div class="header__attractions">
+              <p class="header__text attractions">Attractions</p>
+            </div>
+            <div class="night-position">
+              <svg class="header__icons night">
+                <use href="./src/images/sprite.svg#night" />
+              </svg>
+            </div>
+            <div class="account-position">
+              <svg class="header__icons account">
+                <use href="./src/images/sprite.svg#account" />
+              </svg>
+            </div>
+            <div class="burger-position">
+              <svg class="header__icons burger">
+                <use href="./src/images/sprite.svg#burger" />
+              </svg>
             </div>
           </div>
-          <div class="container-50">
-            <div class="top-section__form-date-in">
+        </div>
+        <div class="top-section__page">
+          <h1 class="top-section__title col-mob-6">
+            Discover stays<br />to live, work or just relax
+          </h1>
+          <div class="top-section__search">
+            <div class="top-section__form-city col-mob-6">
               <div>
-                <p class="top-section__form-date-in--header">Check-in date</p>
-                <label class="form-city__title" for="name2">Check-in — Check-out</label>
-                <input class="top-section__form top-section__form-date-in--border" id="name2" required type="text" name="name2" placeholder="Tue 15 Sept">
+                <label class="form-city__title" for="name"
+                  >Yur destination or hotel name</label
+                >
+                <input
+                  class="top-section__form top-section__form-city--border"
+                  id="name"
+                  required
+                  type="text"
+                  name="name"
+                  placeholder="New-York"
+                />
               </div>
             </div>
-            <div class="top-section__form-date-out">
+            <div class="container-50">
+              <div class="top-section__form-date-in">
+                <div>
+                  <p class="top-section__form-date-in--header">Check-in date</p>
+                  <label class="form-city__title" for="name2"
+                    >Check-in — Check-out</label
+                  >
+                  <input
+                    class="top-section__form top-section__form-date-in--border"
+                    id="name2"
+                    required
+                    type="text"
+                    name="name2"
+                    placeholder="Tue 15 Sept"
+                  />
+                </div>
+              </div>
+              <div class="top-section__form-date-out">
+                <div>
+                  <p class="top-section__form-date-out--header">
+                    Check-out date
+                  </p>
+                  <input
+                    class="top-section__form top-section__form-date-out--border"
+                    required
+                    type="text"
+                    name="name3"
+                    placeholder="Sat 19 Sept"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="container-33">
+              <div class="top-section__form-adult">
+                <label
+                  id="filter__info"
+                  class="top-section__form top-section__form-adult--border"
+                ><span id="filter__label-adults">2</span> Adults — <span id="filter__label-children">0</span> Children — <span id="filter__label-room">1</span> Room</label>
+                <div class="filter" id="filter">
+                  <div class="filter__wrapper">
+                    <p class="filter__text">Adults</p>
+                    <div class="filter__buttons-wrapper">
+                      <button class="filter__buttons" id="minus1">-</button>
+                      <p class="filter__counter" id="value1">2</p>
+                      <button class="filter__buttons" id="plus1">+</button>
+                    </div>
+                  </div>
+                  <div class="filter__wrapper">
+                    <p class="filter__text">Children</p>
+                    <div class="filter__buttons-wrapper">
+                      <button class="filter__buttons" id="minus2">-</button>
+                      <p class="filter__counter" id="value2">0</p>
+                      <button class="filter__buttons" id="plus2">+</button>
+                    </div>
+                  </div>
+                  <div class="filter__wrapper">
+                    <p class="filter__text">Rooms</p>
+                    <div class="filter__buttons-wrapper">
+                      <button class="filter__buttons" id="minus3">-</button>
+                      <p class="filter__counter" id="value3">1</p>
+                      <button class="filter__buttons" id="plus3">+</button>
+                    </div>
+                  </div>
+                  <div class="filter__age" id="filter__age">
+                    <p class="filter__age-text">What is the age of the child you’re travelling with?</p>
+                    <select class="filter__select">
+                      <option>0 years</option>
+                      <option>1 years</option>
+                      <option>2 years</option>
+                      <option>3 years</option>
+                      <option>4 years</option>
+                      <option>5 years</option>
+                      <option>6 years</option>
+                      <option>7 years</option>
+                      <option>8 years</option>
+                      <option>9 years</option>
+                      <option>10 years</option>
+                      <option>11 years</option>
+                      <option>12 years</option>
+                      <option>13 years</option>
+                      <option>14 years</option>
+                      <option>15 years</option>
+                      <option>16 years</option>
+                      <option>17 years</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="top-section__button--size">
               <div>
-                <p class="top-section__form-date-out--header">Check-out date</p>
-                <input class="top-section__form top-section__form-date-out--border" required type="text" name="name3" placeholder="Sat 19 Sept">
+                <button class="top-section__button">Search</button>
               </div>
             </div>
           </div>
-          <div class="container-33">
-            <div class="top-section__form-adult">
-            <label id="filter" class="top-section__form top-section__form-adult--border">2 Adults — 0 Children — 1 Room</label>
+          <div class="top-section__download-icons">
+            <svg class="top-section__google-play">
+              <use href="./src/images/sprite.svg#google-play" />
+            </svg>
+            <svg class="top-section__app-store">
+              <use href="./src/images/sprite.svg#app-store" />
+            </svg>
           </div>
-            <div class="filter">
-              <div class="filter__wrapper">
-                <p class="filter__text">Adults</p>
-                <div class="filter__buttons-wrapper">
-                  <button class="filter__buttons" id="minus">-</button>
-                  <p class="filter__counter" id="value">2</p>
-                  <button class="filter__buttons">+</button>
-                </div>
-              </div>
-              <div class="filter__wrapper">
-                <p class="filter__text">Children</p>
-                <div class="filter__buttons-wrapper">
-                  <button class="filter__buttons">-</button>
-                  <p class="filter__counter">0</p>
-                  <button class="filter__buttons">+</button>
-                </div>
-              </div>
-              <div class="filter__wrapper">
-                <p class="filter__text">Rooms</p>
-                <div class="filter__buttons-wrapper">
-                  <button class="filter__buttons">-</button>
-                  <p class="filter__counter">1</p>
-                  <button class="filter__buttons">+</button>
-                </div>
-              </div>
-            </div>
-         </div>
-          <div class="top-section__button--size">
-            <div>
-              <button class="top-section__button">Search</button>
-            </div>
-          </div>
-        </div>
-        <div class="top-section__download-icons">
-          <svg class="top-section__google-play">
-            <use href="./src/images/sprite.svg#google-play" />
-          </svg>
-          <svg class="top-section__app-store">
-            <use href="./src/images/sprite.svg#app-store" />
-          </svg>
         </div>
       </div>
     </div>
-  </div>
-  <div class="advantages">
-    <h1 class="advantages__title">What do we offer</h1>
-    <div class="advantages__row">
-      <div class="advantages__col col-web-3 col-mob-6">
-        <svg class="icon-support">
-          <use href="./src/images/sprite.svg#vector1" />
-        </svg>
-        <p class="text-icons">Support 24/7"</p>
-      </div>
-      <div class="advantages__col col-web-3 col-mob-6">
-        <svg class="icon-communicate">
-          <use href="./src/images/sprite.svg#vector2" />
-        </svg>
-        <p class="text-icons">Communicate directly</p>
-      </div>
-      <div class="advantages__col col-web-3 col-mob-6">
-        <svg class="icon-book">
-          <use href="./src/images/sprite.svg#vector3" />
-        </svg>
-        <p class="text-icons">Book online</p>
-      </div>
-      <div class="advantages__col col-web-3 col-mob-6">
-        <svg class="icon-guest">
-          <use href="./src/images/sprite.svg#vector4" />
-        </svg>
-        <p class="text-icons">Real guest reviews</p>
+    <div class="advantages">
+      <h1 class="advantages__title">What do we offer</h1>
+      <div class="advantages__row">
+        <div class="advantages__col col-web-3 col-mob-6">
+          <svg class="icon-support">
+            <use href="./src/images/sprite.svg#vector1" />
+          </svg>
+          <p class="text-icons">Support 24/7"</p>
+        </div>
+        <div class="advantages__col col-web-3 col-mob-6">
+          <svg class="icon-communicate">
+            <use href="./src/images/sprite.svg#vector2" />
+          </svg>
+          <p class="text-icons">Communicate directly</p>
+        </div>
+        <div class="advantages__col col-web-3 col-mob-6">
+          <svg class="icon-book">
+            <use href="./src/images/sprite.svg#vector3" />
+          </svg>
+          <p class="text-icons">Book online</p>
+        </div>
+        <div class="advantages__col col-web-3 col-mob-6">
+          <svg class="icon-guest">
+            <use href="./src/images/sprite.svg#vector4" />
+          </svg>
+          <p class="text-icons">Real guest reviews</p>
+        </div>
       </div>
     </div>
-  </div>
     <div class="homes">
       <h1 class="homes__title">Homes guests loves</h1>
       <div id="qwerty" class="images"></div>
@@ -146,3 +200,5 @@
     <script src="src/js/main.js"></script>
   </body>
 </html>
+
+
