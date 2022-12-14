@@ -233,7 +233,6 @@
 }
 
 .container-33 {
-
   flex-wrap: nowrap;
   width: 26%;
   display: flex;
@@ -454,7 +453,6 @@
 .filter__select {
   width: 99px;
   height: 30px;
-  background: #FFFFFF;
-  border: 1px solid #3077C6;
-
+  background: #ffffff;
+  border: 1px solid #3077c6;
 }
