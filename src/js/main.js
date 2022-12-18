@@ -1,19 +1,48 @@
-const filter__info = document.getElementById('filter__info');
+const filterInfo = document.getElementById('filter__info');
 const filter = document.getElementById('filter');
 
-filter__info.addEventListener('click', () => {
-  filter.style.display = 'block';
-});
+
 
 document.body.addEventListener(
-  'click',
-  (event) => {
-    if (!filter.contains(event.target)) {
-      filter.style.display = 'none';
-    }
-  },
-  true,
+    'click',
+    (event) => {
+      if (!filter.contains(event.target) && !filterInfo.contains(event.target)) {
+        filter.style.display = 'none';
+      }
+    },
+    true,
 );
+
+filterInfo.addEventListener('click', (event) => {
+  if(!filter.contains(event.target)) {
+    if (filter.style.display !== "none") {
+      filter.style.display = "none";
+    } else {
+      filter.style.display = "block";
+    }
+  }
+});
+
+// const filter__info = document.getElementById('filter__info');
+// const filter = document.getElementById('filter');
+//
+// filter__info.addEventListener('click', () => {
+//   if (filter.style.display === 'block'){
+//     filter.style.display = 'none'
+//   }
+//   else filter.style.display = 'block'
+//
+// });
+//
+// document.body.addEventListener(
+//   'click',
+//   (event) => {
+//     if (!filter.contains(event.target) && event.target!==filter__info && !filter__info.contains(event.target)) {
+//       filter.style.display = 'none';
+//     }
+//   },
+//   true,
+// );
 
 const minus1 = document.getElementById('minus1');
 const plus1 = document.getElementById('plus1');
@@ -90,13 +119,66 @@ plus3.addEventListener('click', () => {
   adultsroom.innerHTML = number3;
 });
 
-const filter__age = document.getElementById('filter__age');
-const childrenlabel = document.getElementById('filter__label-children');
+filterage = document.getElementById('filter__age')
 
-function filterage() {
-  if (childrenlabel > 0) {
-    filter__age.style.display = 'block';
-  }
-}
+const arrfilter = [];
+const block = filterage.innerHTML + `
+  <p class="filter__age-text">
+    What is the age of the child you’re travelling with?
+  </p>
+  <select class="filter__select">
+    <option>0 years</option>
+    <option>1 years</option>
+    <option>2 years</option>
+    <option>3 years</option>
+    <option>4 years</option>
+    <option>5 years</option>
+    <option>6 years</option>
+    <option>7 years</option>
+    <option>8 years</option>
+    <option>9 years</option>
+    <option>10 years</option>
+    <option>11 years</option>
+    <option>12 years</option>
+    <option>13 years</option>
+    <option>14 years</option>
+    <option>15 years</option>
+    <option>16 years</option>
+    <option>17 years</option>
+  </select>`;
 
-filterage();
+
+plus2.addEventListener('click', () => {
+  arrfilter.push(block)
+})
+
+minus2.addEventListener('click', () => {
+  arrfilter.pop()
+})
+
+
+
+
+
+
+
+// massiv = fetch('https://if-student-api.onrender.com/api/hotels/popular', {
+//   method: 'GET'
+// }).then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(err => {
+//       console.log('Ошибка:', err);
+//     });
+//
+// const qwerty = document.getElementById('qwerty');
+//
+// massiv.map((item) => {
+//   qwerty.innerHTML += `<div>
+//         <img src=${item.imageUrl} alt="your image name">}</img>
+//         <h1 class="images__name">${item.name}</h1>
+//         <p class="images__place">${item.city}</p>
+//         <p class="images__place">${item.country}</p>
+//       </div>`;
+//   massiv.length = 4;
+// });
+
