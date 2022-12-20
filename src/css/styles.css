@@ -346,6 +346,8 @@
   width: 84px;
 }
 
+/*HOMES GUESTS LOVES*/
+
 .homes {
   background: #eaf0f9;
   padding-bottom: 100px;
@@ -355,6 +357,11 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+.homes__images-images {
+  width: 296px;
+  height: 296px;
 }
 
 .images__name {
@@ -368,6 +375,7 @@
 }
 
 .images__place {
+  display: inline;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -450,6 +458,8 @@
 }
 
 .filter__select {
+  display:  block;
+  margin-bottom: 10px;
   width: 99px;
   height: 30px;
   background: #ffffff;

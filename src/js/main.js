@@ -1,48 +1,26 @@
 const filterInfo = document.getElementById('filter__info');
 const filter = document.getElementById('filter');
 
-
-
 document.body.addEventListener(
     'click',
     (event) => {
-      if (!filter.contains(event.target) && !filterInfo.contains(event.target)) {
-        filter.style.display = 'none';
-      }
+        if (!filter.contains(event.target) && !filterInfo.contains(event.target)) {
+            filter.style.display = 'none';
+        }
     },
     true,
 );
 
 filterInfo.addEventListener('click', (event) => {
-  if(!filter.contains(event.target)) {
-    if (filter.style.display !== "none") {
-      filter.style.display = "none";
-    } else {
-      filter.style.display = "block";
+    if (!filter.contains(event.target)) {
+        if (filter.style.display !== 'none') {
+            filter.style.display = 'none';
+        } else {
+            filter.style.display = 'block';
+        }
     }
-  }
 });
 
-// const filter__info = document.getElementById('filter__info');
-// const filter = document.getElementById('filter');
-//
-// filter__info.addEventListener('click', () => {
-//   if (filter.style.display === 'block'){
-//     filter.style.display = 'none'
-//   }
-//   else filter.style.display = 'block'
-//
-// });
-//
-// document.body.addEventListener(
-//   'click',
-//   (event) => {
-//     if (!filter.contains(event.target) && event.target!==filter__info && !filter__info.contains(event.target)) {
-//       filter.style.display = 'none';
-//     }
-//   },
-//   true,
-// );
 
 const minus1 = document.getElementById('minus1');
 const plus1 = document.getElementById('plus1');
@@ -54,19 +32,19 @@ min = 0;
 max = 30;
 
 minus1.addEventListener('click', (e) => {
-  if (number1 > min) {
-    number1 = number1 - 1;
-    value1.innerText = number1;
-  }
-  adultslabel.innerHTML = number1;
+    if (number1 > min) {
+        number1 = number1 - 1;
+        value1.innerText = number1;
+    }
+    adultslabel.innerHTML = number1;
 });
 
 plus1.addEventListener('click', (e) => {
-  if (number1 < max) {
-    number1 = number1 + 1;
-    value1.innerText = number1;
-  }
-  adultslabel.innerHTML = number1;
+    if (number1 < max) {
+        number1 = number1 + 1;
+        value1.innerText = number1;
+    }
+    adultslabel.innerHTML = number1;
 });
 
 const minus2 = document.getElementById('minus2');
@@ -74,24 +52,25 @@ const plus2 = document.getElementById('plus2');
 const value2 = document.getElementById('value2');
 const adultschildren = document.getElementById('filter__label-children');
 
+
 number2 = 0;
 min = 0;
 max = 30;
 
 minus2.addEventListener('click', () => {
-  if (number2 > min) {
-    number2 = number2 - 1;
-    value2.innerText = number2;
-  }
-  adultschildren.innerHTML = number2;
+    if (number2 > min) {
+        number2 = number2 - 1;
+        value2.innerText = number2;
+    }
+    adultschildren.innerHTML = number2;
 });
 
 plus2.addEventListener('click', () => {
-  if (number2 < max) {
-    number2 = number2 + 1;
-    value2.innerText = number2;
-  }
-  adultschildren.innerHTML = number2;
+    if (number2 < max) {
+        number2 = number2 + 1;
+        value2.innerText = number2;
+    }
+    adultschildren.innerHTML = number2;
 });
 
 const minus3 = document.getElementById('minus3');
@@ -104,29 +83,31 @@ min = 0;
 max = 30;
 
 minus3.addEventListener('click', () => {
-  if (number3 > min) {
-    number3 = number3 - 1;
-    value3.innerText = number3;
-  }
-  adultsroom.innerHTML = number3;
+    if (number3 > min) {
+        number3 = number3 - 1;
+        value3.innerText = number3;
+    }
+    adultsroom.innerHTML = number3;
 });
 
 plus3.addEventListener('click', () => {
-  if (number3 < max) {
-    number3 = number3 + 1;
-    value3.innerText = number3;
-  }
-  adultsroom.innerHTML = number3;
+    if (number3 < max) {
+        number3 = number3 + 1;
+        value3.innerText = number3;
+    }
+    adultsroom.innerHTML = number3;
 });
 
-filterage = document.getElementById('filter__age')
+filterage = document.getElementById('filter__age');
 
 const arrfilter = [];
-const block = filterage.innerHTML + `
-  <p class="filter__age-text">
+const title = `
+  <p id="title" class="filter__age-text">
     What is the age of the child you’re travelling with?
-  </p>
-  <select class="filter__select">
+  </p>`;
+const block =
+    `
+  <select id="filter__age__select" class="filter__select">
     <option>0 years</option>
     <option>1 years</option>
     <option>2 years</option>
@@ -147,38 +128,46 @@ const block = filterage.innerHTML + `
     <option>17 years</option>
   </select>`;
 
-
 plus2.addEventListener('click', () => {
-  arrfilter.push(block)
-})
+    if (number2 > 1) {
+        filterage.innerHTML += block
+    } else {
+        filterage.innerHTML += title
+        filterage.innerHTML += block
+    }
+});
 
 minus2.addEventListener('click', () => {
-  arrfilter.pop()
-})
+    const filterAgeSelect = document.getElementById('filter__age__select')
+    const title = document.getElementById('title')
+
+    if (number2 > 0) {
+        filterage.removeChild(filterAgeSelect)
+    } else {
+        filterage.removeChild(title)
+        filterage.removeChild(filterAgeSelect)
+    }
+});
 
 
+const qwerty = document.getElementById('qwerty');
 
 
+const massiv = () => (fetch('https://if-student-api.onrender.com/api/hotels/popular', {
+    method: 'GET'
+}).then(response => response.json())
+    .then(data => data.map((item) => {
+        qwerty.innerHTML += `<div>
+        <img src=${item.imageUrl} alt="your image name" class="homes__images-images">
+        <h1 class="images__name">${item.name}</h1>
+        <p class="images__place">${item.city},</p>
+        <p class="images__place">${item.country}</p>
+      </div>`;
+        data.length = 4;
+    }))
+    .catch(err => {
+        console.log('Ошибка:', err);
+    }));
+massiv()
 
-
-
-// massiv = fetch('https://if-student-api.onrender.com/api/hotels/popular', {
-//   method: 'GET'
-// }).then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(err => {
-//       console.log('Ошибка:', err);
-//     });
-//
-// const qwerty = document.getElementById('qwerty');
-//
-// massiv.map((item) => {
-//   qwerty.innerHTML += `<div>
-//         <img src=${item.imageUrl} alt="your image name">}</img>
-//         <h1 class="images__name">${item.name}</h1>
-//         <p class="images__place">${item.city}</p>
-//         <p class="images__place">${item.country}</p>
-//       </div>`;
-//   massiv.length = 4;
-// });
 
